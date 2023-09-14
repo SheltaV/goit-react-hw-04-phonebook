@@ -23,7 +23,6 @@ export const App = () => {
       [...prevState, newContact]
     )
     }
-    console.log(contacts)
   }
   
   const addFilter = newFilter => {
@@ -31,14 +30,17 @@ export const App = () => {
   }
 
   const getFilteredContacts = () => {
-    return contacts.filter(contact => 
+    return contacts.filter(contact =>
+      // console.log(contact)
       contact.name.toLowerCase().includes(filter.toLowerCase())
     )
   }  
 
   const deleteContact = (contactId) => {
     setContacts(prevState => {
-      prevState.filter(contact => contact.name !== contactId)
+      prevState.filter(contact => 
+        contact.name !== contactId
+      )
     })
   }
 
